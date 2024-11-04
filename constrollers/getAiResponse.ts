@@ -6,7 +6,7 @@ const configuration = {
 
 const openAi = new OpenAI(configuration);
 
-export const getAiResponse = async (messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[]) => {
+const getAiResponse = async (messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[]) => {
     const response = await openAi.chat.completions.create({
         model: 'chatgpt-4o-latest',
         messages,

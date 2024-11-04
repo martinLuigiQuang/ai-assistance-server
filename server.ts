@@ -13,6 +13,7 @@ app.get('/health-check', (_req, res) => {
 })
 
 app.post('/api/v1/ai-assistance', async (req, res) => {
+    console.log({ body: req.body });
     const response = await getAiResponseController(req.body);
     res.status(200).send(response);
 });
