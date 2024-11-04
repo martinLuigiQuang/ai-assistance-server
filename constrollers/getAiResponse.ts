@@ -7,6 +7,7 @@ const configuration = {
 const openAi = new OpenAI(configuration);
 
 const getAiResponse = async (messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[]) => {
+    console.log('Received message:', messages);
     const response = await openAi.chat.completions.create({
         model: 'chatgpt-4o-latest',
         messages,
