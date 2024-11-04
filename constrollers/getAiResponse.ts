@@ -17,7 +17,8 @@ const getAiResponse = async (messages: OpenAI.Chat.Completions.ChatCompletionMes
     return response.choices[0].message.content;
 };
 
-export const getAiResponseController = async (reqBody: { messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] }) => {
-    const aiResp = await getAiResponse(reqBody.messages);
+export const getAiResponseController = async (reqBody: string) => {
+    const parsedReqBody = JSON.parse(reqBody);
+    const aiResp = await getAiResponse(parsedReqBody.messages);
     return aiResp;
 };
