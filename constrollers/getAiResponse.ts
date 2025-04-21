@@ -13,6 +13,7 @@ const getAiResponse = async (messages: OpenAI.Chat.Completions.ChatCompletionMes
         max_tokens: 200,
         temperature: 0.2,
     });
+    console.log(`Received response from AI modal: ${response.model} - prompt tokens: ${response.usage?.prompt_tokens ?? 0} - completion tokens: ${response.usage?.completion_tokens ?? 0}`)
     return response.choices[0].message.content;
 };
 
