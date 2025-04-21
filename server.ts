@@ -1,6 +1,6 @@
-import express from 'npm:@types/express';
-import cors from 'npm:cors';
-import bodyParser from 'npm:body-parser';
+import express from 'npm:@types/express@5.0.1';
+import cors from 'npm:cors@2.8.5';
+import bodyParser from 'npm:body-parser@2.2.0';
 import { getAiResponseController } from './constrollers/getAiResponse.ts';
 
 const app = express();
